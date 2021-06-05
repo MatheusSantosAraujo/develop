@@ -1,6 +1,9 @@
-$(document).ready(function(){
+const urlAberturaChamadoDev = "http://localhost:9090/TicketManagement/AberturaChamado.html"
+const urlAberturaChamadoProd = "https://api-ticketmanagement.herokuapp.com/AbertutaChamado.html"
 
-})
+const urlApiUsuarioDev = "http://localhost:8080/api/usuario"
+const urlApiUsuarioProd = "https://api-ticketmanagement-backend.herokuapp.com/api/usuario"
+
 
 $("#btnEntrar").on("click", function(){
 
@@ -11,14 +14,12 @@ $("#btnEntrar").on("click", function(){
 		alert("Por favor, informar usuário e senha!");
 	} else {
 		$.ajax({
-	//		url: "https://api-ticketmanagement-backend.herokuapp.com/api/usuario",
-
-			url: "http://localhost:8080/api/usuario?usuario="+usuario+"&senha="+senha+"",
+			url: urlApiUsuarioProd+"?usuario="+usuario+"&senha="+senha+"",
 			crossDomain: true,
 			type: "GET"
 		})
 			.done(function(retorno){
-			window.location.replace("http://localhost:9090/TicketManagement/aberturachamado.html");
+			window.location.replace(urlAberturaChamadoProd);
 		})
 			.fail(function() {
 	        alert("Erro ao validar credenciais! Por favor, contate o suporte");

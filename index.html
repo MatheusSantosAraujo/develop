@@ -22,19 +22,19 @@
 				    </div>
 			      	<div class="row">
 			        	<div class="input-field col s6">
-			          		<input id="last_name" type="text" class="validate">
-			          		<label for="last_name">Usuário</label>
+			          		<input id="usuario" type="text">
+			          		<label for="usuario">Usuário</label>
 			        	</div>
 			      	</div>
 			      	<div class="row">
 			        	<div class="input-field col s6">
-			          		<input id="password" type="password" class="validate">
-			          		<label for="password">Senha</label>
+			          		<input id="senha" type="password" class="validate">
+			          		<label for="senha">Senha</label>
 			        	</div>
 			      	</div>
 			      	<div class="row">
 			        	<div class="input-field col s6 center-align">
-						<a class="waves-effect waves-light btn">Entrar</a>
+						<a id="btnEntrar" class="waves-effect waves-light btn">Entrar</a>
 						</div>
 					</div>
 			    </form>
@@ -44,16 +44,6 @@
 
 			<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 			<script src="materialize/js/materialize.js"></script>
-			<script>
-				$(document).ready(function(){
-					$.ajax({
-						url: "https://api-ticketmanagement-backend.herokuapp.com/api/usuario",
-						type: "GET"
-					})
-						.done(function(retorno){
-						alert(console.log(retorno));	
-					});
-				})
-			</script>
+			<script src="funcoes.js"></script>
 		</body>	
 	</html>
